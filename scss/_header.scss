@@ -1,0 +1,176 @@
+.header {
+    @include bp-sm {
+        position: fixed;
+        top: 0;
+        z-index: 10000;
+        left: 0;
+        width: 100%;
+        background: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,.16);
+        padding: 2.4rem 1rem;
+    }
+}
+
+.main-title {
+    position: absolute;
+    z-index: 10;
+    top: 30%;
+    right: 0;
+    left: 0;
+
+    margin: 0 auto;
+    padding-left: 5.3rem;
+
+    font-size: 4.0rem;
+    font-weight: 400;
+
+    transition: opacity .25s ease-in-out;
+    text-align: center;
+    letter-spacing: .5em;
+    text-transform: uppercase;
+    @include bp-sm {
+        padding-left: 0;
+        position: relative;
+        font-size: 2.6rem;
+    }
+    span {
+        color: $blue;
+    }
+    &.menu-open {
+        opacity: 0;
+        @include bp-sm {
+            opacity: 1;
+        }
+    }
+}
+
+.logo {
+    position: fixed;
+    z-index: 100;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+
+    width: 10%;
+    height: 10%;
+    margin: auto auto;
+
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+    @include bp-sm {
+        height: 9rem;
+        width: 9rem;
+    }
+    &:hover {
+        .logo-hover {
+            opacity: .5;
+        }
+    }
+    &.menu-open {
+        @include bp-md {
+            img {
+                transform: rotate(0deg) scale(0.8);
+            }
+        }
+        @include bp-sm {
+            opacity: .7;
+            right: 0;
+            bottom: 0;
+            transform: translate(0,0);
+            background: $white;
+            border-radius: 50% 0 0% 0;
+            &:hover {
+                opacity: 1;
+            }
+        }
+        img {
+            transform: rotate(0deg) scale(0.8);
+        }
+        .logo-hover {
+            opacity: 0;
+            @include bp-sm {
+                display: none;
+            }
+        }
+        .logo-active {
+            opacity: 1;
+        }
+    }
+    &.layer-open-1 {
+        img {
+            transform: rotate(225deg);
+            @include bp-md {
+                transform: rotate(225deg) scale(0.8);
+            }
+
+            @include bp-sm {
+                transform: rotate(180deg) scale(0.8);
+            }
+        }
+
+    }
+    &.layer-open-2 {
+        img {
+            transform: rotate(315deg);
+            @include bp-md {
+                transform: rotate(315deg) scale(0.8);
+            }
+
+            @include bp-sm {
+                transform: rotate(180deg) scale(0.8);
+            }
+        }
+
+    }
+    &.layer-open-3 {
+        img {
+            transform: rotate(-315deg);
+            @include bp-md {
+                transform: rotate(-315deg) scale(0.8);
+            }
+
+            @include bp-sm {
+                transform: rotate(180deg) scale(0.8);
+            }
+        }
+
+    }
+    &.layer-open-4 {
+        img {
+            transform: rotate(135deg);
+            @include bp-md {
+                transform: rotate(135deg) scale(0.8);
+            }
+
+            @include bp-sm {
+                transform: rotate(180deg) scale(0.8);
+            }
+        }
+    }
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        width: 9rem;
+        height: 100%;
+        height: 9rem;
+        margin: auto auto;
+
+        transition: .4s all ease-in-out;
+        ;
+        transform: rotate(-225deg);
+
+        -webkit-backface-visibility: hidden;
+    }
+    .logo-hover {
+        opacity: .8;
+    }
+    .logo-active {
+        opacity: 0;
+    }
+}

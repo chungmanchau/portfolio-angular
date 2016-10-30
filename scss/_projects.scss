@@ -1,0 +1,97 @@
+.projects {
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    .projects-container {
+        .slick-slide {
+            position: relative;
+
+            padding: 2rem;
+
+            cursor: pointer;
+            -webkit-transition: -webkit-filter 500ms linear;
+
+            outline: none;
+
+            filter: grayscale(100%);
+            &.slick-current {
+                filter: grayscale(0%);
+                &:hover {
+                    img {
+                        transform: scale(.6) translateY(-20%);
+                    }
+                }
+            }
+            .btn-container {
+                position: absolute;
+                right: 0;
+                bottom: 4rem;
+                left: 0;
+
+                width: 70%;
+                margin: 0 auto;
+                a {
+                    padding: 1rem 2rem;
+
+                    transition: all .2s ease-in-out;
+
+                    color: $white;
+                    background: rgba(0,0,0, .5);
+                    &:hover {
+                        background: rgba(0,0,0, .2);
+                    }
+                }
+                .learn {
+                    float: left;
+                }
+                .view {
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    text-decoration: none;
+                }
+            }
+            img {
+                position: relative;
+                z-index: 10;
+
+                width: 100%;
+                margin: 0 auto;
+
+                transition: .4s all ease 0.2s;
+
+                box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, .5);
+            }
+        }
+        .the-chef {
+            background: darken(#801515, 10%);
+        }
+        .the-food-connection {
+            background: darken(#0a7ba3, 10%);
+        }
+        .three-dimensional-fitness {
+            background: darken(#62157f, 10%);
+        }
+        .time-zone {
+            background: darken(#ab913a, 10%);
+        }
+        .menu-concept {
+            background: darken(#2c7b2c, 10%);
+        }
+        .morphing-devices {
+            background: darken(#393276, 10%);
+        }
+        .parallax {
+            background: darken(#667b14, 10%);
+        }
+        .iphone-mockup {
+            background: darken(#801f7c, 10%);
+        }
+    }
+}
+
+.btn-container {
+    @extend %clearfix;
+}

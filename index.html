@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="blueCloud">
+<head>
+	<meta charset="UTF-8">
+	<title>Blue Clouds</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-controller="MainController as main">
+	<div data-ng-init="btnId='asd';">
+	<button data-ng-attr-id="btnId" class="button button-light" data-ng-click="showAlert(btnId)">
+	    Click Me
+	</button>
+</div>
+	<div class="wrapper">
+		<header class="header">
+			<div class="main-title"><span>C</span>hung<span>M</span>an<span>C</span>hau</div>
+			<div ui-sref="index" class="logo" id="logo" ng-click="toggleMenu()" ng-class="{'menu-open' : main.openMenu, 'layer-open-1' : main.openLayer1, 'layer-open-2' : main.openLayer2, 'layer-open-3' : main.openLayer3, 'layer-open-4' : main.openLayer4 }">
+				<img class="logo-hover" src="./images/logo-hover.png" alt="Chung Man Chau Logo">
+				<img class="logo-active" src="./images/logo.png" alt="Chung Man Chau Logo">
+			</div>
+		</header>
+		<ui-view state-class class="state-main ng-scope"></ui-view>
+		<div class="layers-container" ng-class="{'menu-open' : main.openMenu, 'layer-open' : main.openLayer,  'layer-open-1' : main.openLayer1, 'layer-open-2' : main.openLayer2, 'layer-open-3' : main.openLayer3, 'layer-open-4' : main.openLayer4 }">
+			<div ui-sref="contact" class="layer layer1" ng-click="openPanel(1)">
+				<span class="layer-title">Connect</span>
+			</div>
+			<div ui-sref="about" class="layer layer2" ng-click="openPanel(2)">
+				<span class="layer-title">About Me</span>
+			</div>
+			<div ui-sref="skills" class="layer layer3" ng-click="openPanel(3)" ng-class="{start : main.initialState}">
+				<span class="layer-title">Skills</span>
+			</div>
+			<div ui-sref="work" class="layer layer4" ng-click="openPanel(4)">
+				<span class="layer-title">Projects</span>
+			</div>
+		</div>
+		<div class="clouds">
+			<div class="cloud cloud1"></div>
+			<div class="cloud cloud2"></div>
+			<div class="cloud cloud3"></div>
+			<div class="cloud-reverse cloud4"></div>
+			<div class="stars">
+				<svg class="sun" height="100" width="100">
+					<circle cx="50" cy="50" r="50" fill="yellow" />
+				</svg>
+				<svg class="moon" height="100" width="100">
+					<circle cx="50" cy="50" r="50" fill="white" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="js/app.module.js"></script>
+	<script src="js/app.controller.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

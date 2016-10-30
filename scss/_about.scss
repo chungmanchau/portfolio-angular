@@ -1,0 +1,76 @@
+.about {
+    position: absolute;
+    left: 0;
+
+    width: 44%;
+    height: 100%;
+
+    @include bp-sm {
+        width: 100%;
+    }
+    .about-container {
+        width: 75%;
+        margin: 20vh auto 0 ;
+        @include bp-sm {
+            margin: 29vh auto 0 ;
+        }
+    }
+    .profile {
+        display: block;
+        overflow: hidden;
+
+        width: 40%;
+        margin: 0 auto 5rem;
+
+        border: 0.2rem solid #333;
+        border-radius: 50%;
+        @include bp-sm {
+            width: 50%;
+            min-width: 150px;
+        } 
+        &.entrance {
+            animation: .7s bounceInDown ease-in-out;
+        }
+    }
+    h1 {
+        position: relative;
+        
+        padding-bottom: 3rem;
+        margin-bottom: 2rem;
+
+        font-weight: 300;
+
+        text-align: center;
+        text-transform: uppercase;
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+
+            width: 10rem;
+            height: 0.2rem;
+            margin-left: -5rem;
+
+            content: '';
+
+            background: $red;
+        }
+    }
+    .details {
+        margin-top: 3rem;
+        font-size: 2rem;
+        line-height: 24pt;
+
+        text-align: center;
+
+        color: #999;
+        &.entrance {
+            animation: .5s fadeIn ease-in-out;
+        }
+        a {
+            text-decoration: none;
+
+            color: $red;
+        }
+    }
+}

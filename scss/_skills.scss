@@ -1,0 +1,48 @@
+.skills {
+    position: absolute;
+    right: 0;
+    width: 44%;
+    height: 100vh;
+    padding: 2rem;
+
+    color: $white;
+    @include bp-sm {
+        top: 23vh;
+        width: 100%;
+        color: $black;
+        height: calc(100vh - 23vh);
+    }
+    .skills-item {
+        .fa {
+            margin-right: 0.5rem;
+            padding: 0.5rem;
+
+            border: 0.2rem solid $white;
+            border-radius: 50%;
+        }
+        .title-item {
+            display: inline-block;
+
+            margin-bottom: 1rem;
+            padding-bottom: 0;
+        }
+        p {
+            padding: 0.5rem;
+
+            border-top: 0.1rem solid $white;
+            @include bp-sm {
+                border-color: $green;
+            }
+        }
+        li {
+            margin: 0;
+            padding: 0;
+
+            list-style-type: none;
+        }
+    }
+
+    &.content-layer {
+        overflow-y: scroll;
+    }
+}
